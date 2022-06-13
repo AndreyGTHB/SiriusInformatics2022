@@ -1,4 +1,4 @@
-# N = int(input())
+N = int(input())
 
 
 dp = dict()
@@ -51,4 +51,4 @@ def calculator(n):
     return dp[n]
 
 
-# print(calculator(N))
+print(calculator(N))
