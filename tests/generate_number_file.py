@@ -1,9 +1,9 @@
 from random import randint
 
 
-N = int(input())
-n = int(input())
-m = int(input())
+N = int(input("Strings:"))
+n = int(input("Columns:"))
+m = int(input("Max:"))
 
 with open("generated_numbers.txt", 'w') as file:
     for i in range(N):
