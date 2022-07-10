@@ -1,13 +1,3 @@
-def msorted(lst):
-    n = len(lst)
-    if n == 1:
-        return lst
-    center = n // 2
-    a = msorted(lst[:center])
-    b = msorted(lst[center:])
-    return merge(a, b)
-
-
 def msort(lst):
     n = len(lst)
     if n == 1:
@@ -29,7 +19,7 @@ def merge(a, b):
     j = 0
     result = []
     while i < la and j < lb:
-        if a[i] < b[j]:
+        if int(a[i] + b[j]) < int(b[j] + a[i]):
             result.append(a[i])
             i += 1
         else:
@@ -38,3 +28,13 @@ def merge(a, b):
     result.extend(a[i:])
     result.extend(b[j:])
     return result
+
+
+n = int(input())
+parts = []
+for _ in range(n):
+    parts.append(input().rstrip())
+
+max_length = len(max(parts, key=lambda it: len(it)))
+msort(parts)
+print(*parts[::-1], sep='')
